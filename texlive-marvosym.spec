@@ -1,3 +1,9 @@
+# revision 23630
+# category Package
+# catalog-ctan /fonts/marvosym
+# catalog-date 2011-08-21 12:30:47 +0200
+# catalog-license ofl
+# catalog-version 2.2
 Name:		texlive-marvosym
 Version:	2.2
 Release:	1
@@ -60,6 +66,7 @@ and support files for TeX (LaTeX).
 %doc %{_texmfdistdir}/source/fonts/marvosym/generate_marvosym_derivs.sh
 %doc %{_texmfdistdir}/source/fonts/marvosym/patch_marvosym_afm.sed
 %doc %{_texmfdistdir}/source/fonts/marvosym/patch_marvosym_pfb.sed
+%doc %{_tlpkgobjdir}/*.tlpobj
 
 #-----------------------------------------------------------------------
 %prep
@@ -70,3 +77,5 @@ and support files for TeX (LaTeX).
 %install
 mkdir -p %{buildroot}%{_texmfdistdir}
 cp -fpar fonts tex doc source %{buildroot}%{_texmfdistdir}
+mkdir -p %{buildroot}%{_tlpkgobjdir}
+cp -fpa tlpkg/tlpobj/*.tlpobj %{buildroot}%{_tlpkgobjdir}
