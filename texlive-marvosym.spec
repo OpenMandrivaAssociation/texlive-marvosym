@@ -18,9 +18,6 @@ BuildArch:	noarch
 BuildRequires:	texlive-tlpkg
 Requires(pre):	texlive-tlpkg
 Requires(post):	texlive-kpathsea
-Conflicts:	texlive-texmf <= 20110705-3
-Conflicts:	texlive-doc <= 20110705-3
-Conflicts:	texlive-source <= 20110705-3
 
 %description
 Martin Vogel's Symbol (marvosym) font contains the Euro
@@ -32,20 +29,12 @@ the zodiac; scissor symbols; CE sign and others. The package
 contains both original TrueType font as well as derived Type 1
 and support files for TeX (LaTeX).
 
-%pre
-    %_texmf_mktexlsr_pre
-
 %post
-    %_texmf_mktexlsr_post
-
-%preun
-    if [ $1 -eq 0 ]; then
-	%_texmf_mktexlsr_pre
-    fi
+    %{_sbindir}/texlive.post
 
 %postun
     if [ $1 -eq 0 ]; then
-	%_texmf_mktexlsr_post
+	%{_sbindir}/texlive.post
     fi
 
 #-----------------------------------------------------------------------
@@ -67,7 +56,6 @@ and support files for TeX (LaTeX).
 %doc %{_texmfdistdir}/source/fonts/marvosym/generate_marvosym_derivs.sh
 %doc %{_texmfdistdir}/source/fonts/marvosym/patch_marvosym_afm.sed
 %doc %{_texmfdistdir}/source/fonts/marvosym/patch_marvosym_pfb.sed
-%doc %{_tlpkgobjdir}/*.tlpobj
 
 #-----------------------------------------------------------------------
 %prep
@@ -78,5 +66,3 @@ and support files for TeX (LaTeX).
 %install
 mkdir -p %{buildroot}%{_texmfdistdir}
 cp -fpar fonts tex doc source %{buildroot}%{_texmfdistdir}
-mkdir -p %{buildroot}%{_tlpkgobjdir}
-cp -fpa tlpkg/tlpobj/*.tlpobj %{buildroot}%{_tlpkgobjdir}
