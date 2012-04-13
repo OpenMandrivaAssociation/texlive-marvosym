@@ -1,12 +1,12 @@
-# revision 23630
+# revision 25888
 # category Package
 # catalog-ctan /fonts/marvosym
-# catalog-date 2011-08-21 12:30:47 +0200
+# catalog-date 2012-04-08 13:55:52 +0200
 # catalog-license ofl
-# catalog-version 2.2
+# catalog-version 2.2a
 Name:		texlive-marvosym
-Version:	2.2
-Release:	2
+Version:	2.2a
+Release:	1
 Summary:	Martin Vogel's Symbols (marvosym) font
 Group:		Publishing
 URL:		http://www.ctan.org/tex-archive/fonts/marvosym
@@ -20,14 +20,14 @@ Requires(pre):	texlive-tlpkg
 Requires(post):	texlive-kpathsea
 
 %description
-Martin Vogel's Symbol (marvosym) font contains the Euro
-currency symbol as defined by the European commission, and also
-in shapes to blend with typefaces Times, Helvetica and Courier;
-symbols for structural engineering; symbols for steel cross-
-sections; astronomy signs (sun, moon, planets); the 12 signs of
-the zodiac; scissor symbols; CE sign and others. The package
-contains both original TrueType font as well as derived Type 1
-and support files for TeX (LaTeX).
+Martin Vogel's Symbol font (marvosym) contains the Euro
+currency symbol as defined by the European commission, along
+with symbols for structural engineering; symbols for steel
+cross-sections; astronomy signs (sun, moon, planets); the 12
+signs of the zodiac; scissor symbols; CE sign and others. The
+package contains both the original TrueType font and the
+derived Type 1 font, together with support files for TeX
+(LaTeX).
 
 %post
     %{_sbindir}/texlive.post
@@ -47,11 +47,15 @@ and support files for TeX (LaTeX).
 %{_texmfdistdir}/tex/latex/marvosym/marvosym.sty
 %{_texmfdistdir}/tex/latex/marvosym/umvs.fd
 %doc %{_texmfdistdir}/doc/fonts/marvosym/FONTLOG.txt
+%doc %{_texmfdistdir}/doc/fonts/marvosym/Makefile
 %doc %{_texmfdistdir}/doc/fonts/marvosym/OFL-FAQ.txt
 %doc %{_texmfdistdir}/doc/fonts/marvosym/OFL.txt
 %doc %{_texmfdistdir}/doc/fonts/marvosym/README
+%doc %{_texmfdistdir}/doc/fonts/marvosym/README.TEXLIVE
 %doc %{_texmfdistdir}/doc/fonts/marvosym/marvodoc.pdf
 %doc %{_texmfdistdir}/doc/fonts/marvosym/marvodoc.tex
+%doc %{_texmfdistdir}/doc/fonts/marvosym/marvosym-doc.pdf
+%doc %{_texmfdistdir}/doc/fonts/marvosym/marvosym-doc.tex
 #- source
 %doc %{_texmfdistdir}/source/fonts/marvosym/generate_marvosym_derivs.sh
 %doc %{_texmfdistdir}/source/fonts/marvosym/patch_marvosym_afm.sed
