@@ -1,4 +1,4 @@
-# revision 25888
+# revision 25926
 # category Package
 # catalog-ctan /fonts/marvosym
 # catalog-date 2012-04-08 13:55:52 +0200
@@ -6,7 +6,7 @@
 # catalog-version 2.2a
 Name:		texlive-marvosym
 Version:	2.2a
-Release:	1
+Release:	2
 Summary:	Martin Vogel's Symbols (marvosym) font
 Group:		Publishing
 URL:		http://www.ctan.org/tex-archive/fonts/marvosym
@@ -51,7 +51,6 @@ derived Type 1 font, together with support files for TeX
 %doc %{_texmfdistdir}/doc/fonts/marvosym/OFL-FAQ.txt
 %doc %{_texmfdistdir}/doc/fonts/marvosym/OFL.txt
 %doc %{_texmfdistdir}/doc/fonts/marvosym/README
-%doc %{_texmfdistdir}/doc/fonts/marvosym/README.TEXLIVE
 %doc %{_texmfdistdir}/doc/fonts/marvosym/marvodoc.pdf
 %doc %{_texmfdistdir}/doc/fonts/marvosym/marvodoc.tex
 %doc %{_texmfdistdir}/doc/fonts/marvosym/marvosym-doc.pdf
