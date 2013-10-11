@@ -1,4 +1,4 @@
-# revision 25926
+# revision 29349
 # category Package
 # catalog-ctan /fonts/marvosym
 # catalog-date 2012-04-08 13:55:52 +0200
@@ -6,7 +6,7 @@
 # catalog-version 2.2a
 Name:		texlive-marvosym
 Version:	2.2a
-Release:	2
+Release:	3
 Summary:	Martin Vogel's Symbols (marvosym) font
 Group:		Publishing
 URL:		http://www.ctan.org/tex-archive/fonts/marvosym
@@ -69,25 +69,3 @@ derived Type 1 font, together with support files for TeX
 %install
 mkdir -p %{buildroot}%{_texmfdistdir}
 cp -fpar fonts tex doc source %{buildroot}%{_texmfdistdir}
-
-
-%changelog
-* Mon Jun 11 2012 Paulo Andrade <pcpa@mandriva.com.br> 2.2a-2
-+ Revision: 804938
-- Update to latest release.
-
-* Fri Apr 13 2012 Paulo Andrade <pcpa@mandriva.com.br> 2.2a-1
-+ Revision: 790677
-- Update to latest release.
-
-* Wed Jan 04 2012 Paulo Andrade <pcpa@mandriva.com.br> 2.2-2
-+ Revision: 753767
-- Rebuild to reduce used resources
-
-* Sat Nov 05 2011 Paulo Andrade <pcpa@mandriva.com.br> 2.2-1
-+ Revision: 718957
-- texlive-marvosym
-- texlive-marvosym
-- texlive-marvosym
-- texlive-marvosym
-
