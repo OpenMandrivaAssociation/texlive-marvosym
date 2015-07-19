@@ -6,7 +6,7 @@
 # catalog-version 2.2a
 Name:		texlive-marvosym
 Version:	2.2a
-Release:	10
+Release:	11
 Summary:	Martin Vogel's Symbols (marvosym) font
 Group:		Publishing
 URL:		http://www.ctan.org/tex-archive/fonts/marvosym
