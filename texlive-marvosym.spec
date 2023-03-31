@@ -1,6 +1,6 @@
 Name:		texlive-marvosym
 Version:	29349
-Release:	1
+Release:	2
 Summary:	Martin Vogel's Symbols (marvosym) font
 Group:		Publishing
 URL:		http://www.ctan.org/tex-archive/fonts/marvosym
