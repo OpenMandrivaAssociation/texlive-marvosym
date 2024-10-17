@@ -3,7 +3,7 @@ Version:	29349
 Release:	2
 Summary:	Martin Vogel's Symbols (marvosym) font
 Group:		Publishing
-URL:		http://www.ctan.org/tex-archive/fonts/marvosym
+URL:		https://www.ctan.org/tex-archive/fonts/marvosym
 License:	OFL
 Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/marvosym.r%{version}.tar.xz
 Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/marvosym.doc.r%{version}.tar.xz
