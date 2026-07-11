@@ -1,66 +1,26 @@
-Name:		texlive-marvosym
-Version:	29349
-Release:	2
-Summary:	Martin Vogel's Symbols (marvosym) font
+%global tl_name marvosym
+%global tl_revision 79618
+
+Name:		texlive-%{tl_name}
+Epoch:		1
+Version:	2.2a
+Release:	%{tl_revision}.1
+Summary:	Martin Vogels Symbols (marvosym) font
 Group:		Publishing
 URL:		https://www.ctan.org/tex-archive/fonts/marvosym
-License:	OFL
-Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/marvosym.r%{version}.tar.xz
-Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/marvosym.doc.r%{version}.tar.xz
-Source2:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/marvosym.source.r%{version}.tar.xz
+License:	ofl
+Source0:	https://mirrors.ctan.org/systems/texlive/tlnet/archive/marvosym.r%{tl_revision}.tar.xz
+Source1:	https://mirrors.ctan.org/systems/texlive/tlnet/archive/marvosym.doc.r%{tl_revision}.tar.xz
+Source2:	https://mirrors.ctan.org/systems/texlive/tlnet/archive/marvosym.source.r%{tl_revision}.tar.xz
 BuildArch:	noarch
-BuildRequires:	texlive-tlpkg
-Requires(pre):	texlive-tlpkg
-Requires(post):	texlive-kpathsea
+BuildSystem:	texlive
+Provides:	texlive(%{tl_name}) = %{tl_revision}
 
 %description
-Martin Vogel's Symbol font (marvosym) contains the Euro
-currency symbol as defined by the European commission, along
-with symbols for structural engineering; symbols for steel
-cross-sections; astronomy signs (sun, moon, planets); the 12
-signs of the zodiac; scissor symbols; CE sign and others. The
-package contains both the original TrueType font and the
-derived Type 1 font, together with support files for TeX
-(LaTeX).
+Martin Vogel's Symbol font (marvosym) contains the Euro currency symbol
+as defined by the European commission, along with symbols for structural
+engineering; symbols for steel cross-sections; astronomy signs (sun,
+moon, planets); the 12 signs of the zodiac; scissor symbols; CE sign and
+others. The package contains both the original TrueType font and the
+derived Type 1 font, together with support files for TeX (LaTeX).
 
-%post
-%{_sbindir}/texlive.post
-
-%postun
-if [ $1 -eq 0 ]; then
-	%{_sbindir}/texlive.post
-fi
-
-#-----------------------------------------------------------------------
-%files
-%{_texmfdistdir}/fonts/afm/public/marvosym/marvosym.afm
-%{_texmfdistdir}/fonts/map/dvips/marvosym/marvosym.map
-%{_texmfdistdir}/fonts/tfm/public/marvosym/umvs.tfm
-%{_texmfdistdir}/fonts/truetype/public/marvosym/marvosym.ttf
-%{_texmfdistdir}/fonts/type1/public/marvosym/marvosym.pfb
-%{_texmfdistdir}/tex/latex/marvosym/marvosym.sty
-%{_texmfdistdir}/tex/latex/marvosym/umvs.fd
-%doc %{_texmfdistdir}/doc/fonts/marvosym/FONTLOG.txt
-%doc %{_texmfdistdir}/doc/fonts/marvosym/Makefile
-%doc %{_texmfdistdir}/doc/fonts/marvosym/OFL-FAQ.txt
-%doc %{_texmfdistdir}/doc/fonts/marvosym/OFL.txt
-%doc %{_texmfdistdir}/doc/fonts/marvosym/README
-%doc %{_texmfdistdir}/doc/fonts/marvosym/marvodoc.pdf
-%doc %{_texmfdistdir}/doc/fonts/marvosym/marvodoc.tex
-%doc %{_texmfdistdir}/doc/fonts/marvosym/marvosym-doc.pdf
-%doc %{_texmfdistdir}/doc/fonts/marvosym/marvosym-doc.tex
-#- source
-%doc %{_texmfdistdir}/source/fonts/marvosym/generate_marvosym_derivs.sh
-%doc %{_texmfdistdir}/source/fonts/marvosym/patch_marvosym_afm.sed
-%doc %{_texmfdistdir}/source/fonts/marvosym/patch_marvosym_pfb.sed
-
-#-----------------------------------------------------------------------
-%prep
-%setup -c -a1 -a2
-%autopatch -p1
-
-%build
-
-%install
-mkdir -p %{buildroot}%{_texmfdistdir}
-cp -fpar fonts tex doc source %{buildroot}%{_texmfdistdir}
